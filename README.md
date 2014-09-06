@@ -15,6 +15,8 @@ The initial intention is to present call chains and data flow in a network of mo
 
 river-net is built based on [dagre-d3](https://github.com/cpettitt/dagre-d3), which uses [d3](https://github.com/mbostock/d3) as renderer, rendering the graph to SVG .
 
+The current implementation is inspired by [ETL Visualization](http://cpettitt.github.io/project/dagre-d3/latest/demo/etl-status.html), which is an example of dagre-d3 .
+
 Complications
 ---------------
 
