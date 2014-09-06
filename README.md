@@ -6,7 +6,7 @@ A Javascript network graph renderer that presents the call chains, data flows in
 Rationale
 ------------------
 
-The initial intention is to present call chains and data flow in a network of modules and satisfying the following needs:
+To ease the process to find the bottlenecks in the system, river-net presents call chains and data flow in a network of modules and satisfies the following needs:
 
 * Auto layout like in [Graphviz Dot](http://www.graphviz.org/) but remains customizable
 * The presentation should please the eye
@@ -63,7 +63,18 @@ For now, river-net uses a json to describe the network. But we should have an AP
 Dependencies
 ----------------
 
-Coming soon.
+Essential:
+
+* [dagre-d3](https://github.com/cpettitt/dagre-d3)
+    - [graphlib](https://github.com/cpettitt/graphlib): bundled in dagre-d3
+    - [d3](https://github.com/mbostock/d3)
+* [jquery](https://github.com/jquery/jquery)
+* [lodash](https://github.com/lodash/lodash)
+
+Should be made optional:
+
+* [peity](https://github.com/benpickles/peity)
+* [tipsy](https://github.com/jaz303/tipsy)
 
 Installation
 --------------
