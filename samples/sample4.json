@@ -1,0 +1,74 @@
+{
+    "meta": {
+        "name": "Example",
+        "mock_flow_origin_module": "A",
+        "nodeSep": 20,
+        "edgeSep": 20,
+        "rankSep": 50,
+        "rankDir": "LR"
+    },
+    "modules": {
+        "A": {
+            "input_throughput": 1,
+            "calls": {
+                "B": {}
+            },
+            "layer": 0
+        },
+        "B": {
+            "calls": {
+                "C": {
+                    "factor": 1,
+                    "services": {
+                        "C_service_1": 1,
+                        "C_service_2": 1
+                    }
+                },
+                "D": {
+                    "factor": 0.06,
+                    "services": {
+                        "D_service_1": 1,
+                        "D_service_2": 1,
+                        "D_service_3": 1
+                    }
+                }
+            },
+            "layer": 10         
+        },
+        "C": {
+            "calls": {
+                "E": {
+                    "tunnel": "tunnel"
+                },
+                "F": {
+                    "tunnel": "tunnel"
+                }
+            },
+            "layer": 20 
+        },
+        "D": {
+            "calls": {
+                "E": {
+                    "tunnel": "tunnel"
+                },
+                "G": {
+                    "tunnel": "tunnel"
+                }
+            },
+            "layer": 20 
+        },
+        "tunnel": {
+            "tunnel": true,
+            "layer": 25
+        },
+        "F": {
+            "layer": 30 
+        },
+        "E": {
+            "layer": 30 
+        },
+        "G": {
+            "layer": 30 
+        }
+    }
+}
