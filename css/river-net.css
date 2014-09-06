@@ -1,0 +1,167 @@
+body {
+    margin: 0;
+    padding: 0;
+    font-family: "Microsoft Yahei", "Helvetica Neue", Helvetica, Arial, sans-serf;
+    background: #333;
+  }
+
+
+  @-webkit-keyframes flash {
+    0%, 50%, 100% {
+      opacity: 1;
+    }
+
+    25%, 75% {
+      opacity: 0.2;
+    }
+  }
+
+  @keyframes flash {
+    0%, 50%, 100% {
+      opacity: 1;
+    }
+
+    25%, 75% {
+      opacity: 0.2;
+    }
+  }
+
+  .warn {
+    -webkit-animation-duration: 5s;
+    animation-duration: 5s;
+    -webkit-animation-fill-mode: both;
+    animation-fill-mode: both;
+    -webkit-animation-iteration-count: 1;
+    animation-iteration-count: 1;
+  }
+
+  .live.map {
+    width: 100%;
+    height: 100%;
+  }
+
+/*  svg {
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+  }*/
+
+  .live.map text {
+    font-weight: 300;
+    font-size: 14px;
+  }
+
+  .live.map .node rect {
+    stroke-width: 1px;
+    stroke: #bbb;
+    fill: #666;
+  }
+
+  .live.map .node.tunnel rect{
+    fill: #888;
+  }
+
+  .live.map .status {
+    height: 40px;
+    width: 15px;
+    display: block;
+    float: left;
+    border-top-left-radius: 5px;
+    border-bottom-left-radius: 5px;
+    margin-top: 0px;
+    margin-bottom: 0px;
+    margin-right: 4px;
+  }
+
+  .live.map .services .status {
+    border-bottom-left-radius: 0px;
+  }
+
+  .live.map .services .status {
+    /* height: 200px; */
+  }
+
+  .live.map .running .status {
+    background-color: #7f7;
+  }
+
+  .live.map .running.warn .status {
+    background-color: #ffed68;
+  }
+
+  .live.map .stopped .status {
+    background-color: #f77;
+  }
+
+  .live.map .warn .meter {
+    color: #f77;
+  }
+
+  .warn {
+    -webkit-animation-name: flash;
+    animation-name: flash;
+  }
+
+  .live.map .consumers {
+    margin-right: 2px;
+  }
+
+  .live.map .consumers,
+  .live.map .name {
+    margin-top: 4px;
+  } 
+
+  .live.map .consumers:after {
+    content: "x";
+  }
+
+  .live.map .name, .live.map .meter {
+    display: block;
+    width: 130px;
+    height: 20px;
+    font-size: 12px;
+    margin-top: 2px;
+  }
+
+  .live.map .services .node-header {
+    border-bottom: #fff solid 1px;
+  }
+
+  .live.map .service-list {
+    display: block;
+    margin-right: 5px;
+  }
+
+  .live.map .node g div {
+    color: #fff;
+  }
+
+  .live.map .node g div span.consumers {
+    display: inline-block;
+    width: 20px;
+  }
+
+  .live.map .edgeLabel rect {
+    fill: none;
+  }
+
+  .live.map .edgeLabel tspan {
+    fill: #fff;
+
+  }
+
+  .live.map .edgeLabel div {
+    width: 100px;
+    color: #eee;
+  }
+
+  .live.map .edgePath path {
+    stroke: #999;
+    stroke-width: 1.5px;
+    fill: none;
+  }
+
+  /* Override path marker color */
+  #arrowhead {
+    fill: #999 !important;
+  }
