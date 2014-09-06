@@ -32,7 +32,11 @@ In some cases, when B is called once, C and D are not called once each, but weig
 
 Give the __input throughput__ of A, we need to know the input throughput of every module and whether it's above its capacity.
 
-These are the complications that river-net takes into account.
+These are the complications that river-net takes into account, and it will render something like:
+
+![](https://github.com/utensil/river-net/raw/master/doc/img/sample3.png)
+
+The json to generate the above image is [here](https://github.com/utensil/river-net/raw/master/samples/sample3.json).
 
 Development Status
 -----------------------------
