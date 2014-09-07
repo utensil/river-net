@@ -125,7 +125,10 @@ function formatIntOrFloat(number)
         number.toString() : number.toFixed(2);
 }
 
-var RiverNet = function (module_json_descriptor) {
+var RiverNet = function (svg_css_selector, module_json_descriptor) {
+  //TODO add param checks
+
+  this.svg_css_selector = svg_css_selector;
   this.modules = module_json_descriptor.modules;
   this.meta = module_json_descriptor.meta;
   this.zoom = d3.behavior.zoom();
@@ -469,7 +472,9 @@ RiverNet.prototype = {
     });
 
     var renderer = new dagreD3.Renderer();
-    var svg = d3.select("svg");
+    var svg = d3.select($this.svg_css_selector);
+
+    svg.classed('river-net', true);
 
     // Extend drawNodes function to set custom ID and class on nodes
     var oldDrawNodes = renderer.drawNodes();
@@ -555,7 +560,7 @@ RiverNet.prototype = {
       .rankDir(meta["rankDir"] || "LR");
     var renderedLayout = renderer
       .layout(layout)
-      .run(dagreD3.json.decode(nodes, edges), d3.select("svg g"));
+      .run(dagreD3.json.decode(nodes, edges), d3.select($this.svg_css_selector + " g"));
 
     // Zoom and scale to fit
     var zoomScale = zoom.scale();
